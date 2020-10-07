@@ -14,7 +14,8 @@ namespace UserRegistration
             // AskFirstName(user);
             // AskLastName(user);
             //AskEmail(user);
-            AskMobileNumber(user);
+            //AskMobileNumber(user);
+            AskPassword(user);
 
 
         }
@@ -60,6 +61,17 @@ namespace UserRegistration
             else
                 Console.WriteLine("Invalid Moobile Number. " +
                     "It should be in the correct format E.g. 91 9919819801");
+        }
+
+        public static void AskPassword(User user)
+        {
+            Console.Write("Enter Password : ");
+            var password = Console.ReadLine();
+            if (user.ValidatePassword(password))
+                user.password = password;
+            else
+                Console.WriteLine("Invalid Password. " +
+                    "It should have Minimum 8 characters, atleast 1 Upper Case, atleast 1 number and exactly 1 special character");
         }
     }
 }

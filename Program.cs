@@ -11,13 +11,11 @@ namespace UserRegistration
             Console.WriteLine("Welcome to User Registration!");
 
             var user = new User();
-            // AskFirstName(user);
-            // AskLastName(user);
-            //AskEmail(user);
-            //AskMobileNumber(user);
+            AskFirstName(user);
+            AskLastName(user);
+            AskEmail(user);
+            AskMobileNumber(user);
             AskPassword(user);
-
-
         }
 
         public static void AskFirstName(User user)

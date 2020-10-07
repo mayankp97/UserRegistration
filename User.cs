@@ -8,6 +8,7 @@ namespace UserRegistration
 {
     class User
     {
+        //^[a-z0-9A-Z]+[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}$
         public string firstName { get; set; }
         private string _regexFirstName = "^[A-Z][a-z]{2,}$";
         public string lastName { get; set; }

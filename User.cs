@@ -8,15 +8,13 @@ namespace UserRegistration
 {
     class User
     {
-        //^[a-z0-9A-Z]+[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}$
-        //^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$
         public string firstName { get; set; }
         private string _regexFirstName = "^[A-Z][a-z]{2,}$";
         public string lastName { get; set; }
         private string _regexLastName = "^[A-Z][a-z]{2,}$";
 
         public string email { get; set;  }
-        private string _regexEmail = "";
+        private string _regexEmail = "^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*[@][A-Za-z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
 
         public string password { get; set; }
         private string _regexPassword = "";
@@ -33,6 +31,11 @@ namespace UserRegistration
         public bool ValidateLastName(string lastName)
         {
             return Regex.IsMatch(lastName, _regexLastName);
+        }
+
+        public bool ValidateEmail(string email)
+        {
+            return Regex.IsMatch(email, _regexEmail);
         }
 
 

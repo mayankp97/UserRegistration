@@ -20,7 +20,7 @@ namespace UserRegistration
         private string _regexPassword = "";
 
         public string mobileNumber { get; set; }
-        private string _regexMobileNumber = "";
+        private string _regexMobileNumber = "^[0-9]{2}[ ][1-9][0-9]{9}$";
 
 
         public bool ValidateFirstName(string firstName)
@@ -38,6 +38,10 @@ namespace UserRegistration
             return Regex.IsMatch(email, _regexEmail);
         }
 
+        public bool ValidateMobileNumber(string mobileNumber)
+        {
+            return Regex.IsMatch(mobileNumber, _regexMobileNumber);
+        }
 
     }
 }

@@ -11,9 +11,10 @@ namespace UserRegistration
             Console.WriteLine("Welcome to User Registration!");
 
             var user = new User();
-           // AskFirstName(user);
-           // AskLastName(user);
-            AskEmail(user);
+            // AskFirstName(user);
+            // AskLastName(user);
+            //AskEmail(user);
+            AskMobileNumber(user);
 
 
         }
@@ -48,6 +49,17 @@ namespace UserRegistration
             else
                 Console.WriteLine("Invalid email. " +
                     "It should be in the correct format E.g. abc.xyz@bl.co.in");
+        }
+
+        public static void AskMobileNumber(User user)
+        {
+            Console.Write("Enter Mobile Number : ");
+            var mobileNumber = Console.ReadLine();
+            if (user.ValidateMobileNumber(mobileNumber))
+                user.mobileNumber = mobileNumber;
+            else
+                Console.WriteLine("Invalid Moobile Number. " +
+                    "It should be in the correct format E.g. 91 9919819801");
         }
     }
 }

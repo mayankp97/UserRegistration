@@ -11,11 +11,19 @@ namespace UserRegistration
             Console.WriteLine("Welcome to User Registration!");
 
             var user = new User();
+            
             AskFirstName(user);
             AskLastName(user);
             AskEmail(user);
             AskMobileNumber(user);
             AskPassword(user);
+            
+            var allEmails = "abc@yahoo.com abc-100@yahoo.com abc111@abc.com abc-100@abc.net " +
+                "abc.100@abc.com.au abc@1.com abc@gmail.com.com abc+100@gmail.com";
+            var allInvalidEMails = "abc abc@.com.my abc123@gmail.a abc123@.com abc123@.com.com .abc@abc.com abc()*@gmail.com " +
+                "abc@%*.com abc..2002@gmail.com abc.@gmail.com abc@gmail.com.1a abc@abc@gmail.com abc@gamil.com.aa.au";
+            CheckEmails(allEmails);
+            CheckEmails(allInvalidEMails);
         }
 
         public static void AskFirstName(User user)
@@ -70,6 +78,21 @@ namespace UserRegistration
             else
                 Console.WriteLine("Invalid Password. " +
                     "It should have Minimum 8 characters, atleast 1 Upper Case, atleast 1 number and exactly 1 special character");
+        }
+
+        public static void CheckEmails(string allEmails)
+        {
+            var user = new User();
+            string[] emails = allEmails.Split(' ');
+            foreach(var email in emails)
+            {
+                Console.Write(email + " : ");
+                if (user.ValidateEmail(email))
+                    Console.Write("Valid");
+                else
+                    Console.Write("Invalid");
+                Console.WriteLine();
+            }
         }
     }
 }

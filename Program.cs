@@ -12,10 +12,10 @@ namespace UserRegistration
 
             var user = new User();
             
-            AskFirstName(user);
-            AskLastName(user);
-            AskEmail(user);
-            AskMobileNumber(user);
+            //AskFirstName(user);
+            //AskLastName(user);
+            //AskEmail(user);
+            //AskMobileNumber(user);
             AskPassword(user);
             
             var allEmails = "abc@yahoo.com abc-100@yahoo.com abc111@abc.com abc-100@abc.net " +

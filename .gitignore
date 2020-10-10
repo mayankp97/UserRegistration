@@ -1,0 +1,9 @@
+.vs/ 
+bin/ 
+obj/ 
+UserRegistration.csproj 
+UserRegistration.IsolatorCache.user 
+UserRegistration.sln 
+UserRegistrationTests/bin
+UserRegistrationTests/obj
+UserRegistrationTests/UserRegistrationTests.csproj

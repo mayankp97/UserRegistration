@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
-    class User
+    public class User
     {
         public string firstName { get; set; }
         private string _regexFirstName = "^[A-Z][a-z]{2,}$";
@@ -18,7 +18,7 @@ namespace UserRegistration
 
         public string password { get; set; }
         public static string spcl = ".,:;'!@#$%^&*_+=|(){}[?\\";
-        private string _regexPassword = "^(?=.*[A-Z])(?=.*[0-9])(?=[A-Za-z0-9]*[-~!@#$%^&*()_+=`,.<>?/][A-Za-z0-9]*$)[\\S]{8,}$";
+        private string _regexPassword = "^(?=.*[A-Z])(?=.*[0-9])(?=[A-Za-z0-9]*[-~!@#$%^&*()_+=`,.<>?/][A-Za-z0-9]*$).{8,}$";
 
         public string mobileNumber { get; set; }
         private string _regexMobileNumber = "^[0-9]{2}[ ][1-9][0-9]{9}$";

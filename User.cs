@@ -17,6 +17,7 @@ namespace UserRegistration
         private string _regexEmail = "^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*[@][A-Za-z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$";
 
         public string password { get; set; }
+
         public static string spcl = ".,:;'!@#$%^&*_+=|(){}[?\\";
         private string _regexPassword = "^(?=.*[A-Z])(?=.*[0-9])(?=[A-Za-z0-9]*[-~!@#$%^&*()_+=`,.<>?/][A-Za-z0-9]*$).{8,}$";
 

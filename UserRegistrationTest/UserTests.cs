@@ -34,21 +34,20 @@ namespace UserRegistrationTests
         public void ValidateFirstName_IfInvalidName_ReturnsFalse(string firstName)
         {
 
-            //Act
-            var result = _user.ValidateFirstName(firstName);
 
             //Assert
-            Assert.IsFalse(result);
+            Assert.That(() => _user.ValidateFirstName(firstName), Throws.Exception.InstanceOf<UserException>());
+            Assert.That(() => _user.ValidateFirstName(firstName), Throws.Exception.Message.Contains("invalid first name").IgnoreCase);
         }
 
         [Test]
         public void ValidateLastName_IfValidName_ReturnsTrue()
         {
             //Arrange
-            var firstName = "Purohit";
+            var lastName = "Purohit";
 
             //Act
-            var result = _user.ValidateFirstName(firstName);
+            var result = _user.ValidateLastName(lastName);
 
             //Assert
             Assert.IsTrue(result);
@@ -57,14 +56,12 @@ namespace UserRegistrationTests
         [Test]
         [TestCase("purohit")]
         [TestCase("Pu")]
-        public void ValidateLastName_IfInvalidName_ReturnsFalse(string firstName)
+        public void ValidateLastName_IfInvalidName_ReturnsFalse(string lastName)
         {
 
-            //Act
-            var result = _user.ValidateFirstName(firstName);
-
             //Assert
-            Assert.IsFalse(result);
+            Assert.That(() => _user.ValidateLastName(lastName), Throws.Exception.InstanceOf<UserException>());
+            Assert.That(() => _user.ValidateLastName(lastName), Throws.Exception.Message.Contains("invalid last name").IgnoreCase);
         }
 
         [Test]
@@ -85,11 +82,9 @@ namespace UserRegistrationTests
         [TestCase("@bl.co")]
         public void ValidateEmail_IfInvalidEmail_ReturnsFalse(string email)
         {
-            //Act
-            var result = _user.ValidateEmail(email);
-
             //Assert
-            Assert.IsFalse(result);
+            Assert.That(() => _user.ValidateEmail(email), Throws.Exception.InstanceOf<UserException>());
+            Assert.That(() => _user.ValidateEmail(email), Throws.Exception.Message.Contains("invalid email").IgnoreCase);
         }
 
         [Test]
@@ -109,11 +104,9 @@ namespace UserRegistrationTests
         [TestCase("91 0919819801")]
         public void ValidateMobileNumber_IfInvalidMobileNumber_ReturnsFalse(string mobileNumber)
         {
-            //Act
-            var result = _user.ValidateMobileNumber(mobileNumber);
-
             //Assert
-            Assert.IsFalse(result);
+            Assert.That(() => _user.ValidateMobileNumber(mobileNumber), Throws.Exception.InstanceOf<UserException>());
+            Assert.That(() => _user.ValidateMobileNumber(mobileNumber), Throws.Exception.Message.Contains("invalid mobile number").IgnoreCase);
         }
 
         [Test]
@@ -135,11 +128,9 @@ namespace UserRegistrationTests
 
         public void ValidatePAssword_IfInvalidPassword_ReturnsFalse(string password)
         {
-            //Act
-            var result = _user.ValidatePassword(password);
-
             //Assert
-            Assert.IsFalse(result);
+            Assert.That(() => _user.ValidatePassword(password), Throws.Exception.InstanceOf<UserException>());
+            Assert.That(() => _user.ValidatePassword(password), Throws.Exception.Message.Contains("invalid password").IgnoreCase);
         }
     }
 }

@@ -27,26 +27,26 @@ namespace UserRegistration
 
         public bool ValidateFirstName(string firstName)
         {
-            return Regex.IsMatch(firstName, _regexFirstName);
+            return Regex.IsMatch(firstName, _regexFirstName) ? true : throw new UserException(UserException.error.Invalid_Name,"Invalid First Name");
         }
 
         public bool ValidateLastName(string lastName)
         {
-            return Regex.IsMatch(lastName, _regexLastName);
+            return Regex.IsMatch(lastName, _regexLastName) ? true : throw new UserException(UserException.error.Invalid_Name, "Invalid Last Name");
         }
 
         public bool ValidateEmail(string email)
         {
-            return Regex.IsMatch(email, _regexEmail);
+            return Regex.IsMatch(email, _regexEmail) ? true : throw new UserException(UserException.error.Invalid_Email, "Invalid Email");
         }
 
         public bool ValidatePassword(string password)
         {
-            return Regex.IsMatch(password, _regexPassword);
+            return Regex.IsMatch(password, _regexPassword) ? true : throw new UserException(UserException.error.Invalid_Password, "Invalid Password");
         }
         public bool ValidateMobileNumber(string mobileNumber)
         {
-            return Regex.IsMatch(mobileNumber, _regexMobileNumber);
+            return Regex.IsMatch(mobileNumber, _regexMobileNumber) ? true : throw new UserException(UserException.error.Invalid_Mobile, "Invalid Mobile Number");
         }
 
     }
